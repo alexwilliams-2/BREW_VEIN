@@ -1,6 +1,5 @@
 class Beer < ApplicationRecord
-  belongs_to :user, dependent: :destroy
-  has_many :reviews
+  belongs_to :user
   has_many :orders
 
   validates :name, presence: true
