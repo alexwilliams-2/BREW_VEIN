@@ -9,5 +9,4 @@ Rails.application.routes.draw do
   resources :orders, only: %i[index destroy]
   # Defines the root path route ("/")
   # root "articles#index"
-
 end
