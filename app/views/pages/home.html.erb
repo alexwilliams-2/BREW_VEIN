@@ -1,12 +1,14 @@
-<h1>Welcome to BREW-VEIN </h1>
-<h2> Fear no longer. Never settle for supermarket draught again!</h2>
+<div class="container" style="background-color: #f0f0f0; padding: 20px;">
+  <div class="card-product" style="border: 1px solid #ccc; padding: 10px;">
+    <img src="app/images/beer.png" style="width: 200px; height: auto;" />
+    <div class="card-product-infos">
+      <h1 style="font-size: 24px;"><strong>Welcome to BREW-VEIN</strong></h1>
+      <h2 style="font-size: 18px;">Fear no longer. Never settle for supermarket draught again!</h2>
+      <h3 style="font-size: 16px;">Beer, the cause of, and solution to, all of your problems.</h3>
+      <%= link_to 'Enter our wonderful world of alcohol-enhanced medicine', beers_path, style: 'text-decoration: none; color: #333;' %>
 
-<h3> Beer, the cause of, and solution to, all of your problems.</h3>
-
-<%= link_to 'Enter our wonderful world of alcohol-enhanced medicine', "/beers" %>
-
-<h2> See some of our beers </h2>
-<li>
-  <%= @beers.first.name  %>
-</li>
-  
+      <h2 style="font-size: 20px; margin-top: 10px;">See some of our beers</h2>
+      <li style="font-size: 16px;">
+        <%= @beers.first.name %>
+      </li>
+      <%= link_to "View all beers", beers_path, class: "btn btn-primary"%>
