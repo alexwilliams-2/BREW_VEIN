@@ -1,5 +1,12 @@
-<ul>
-  <% @beers.each do |beer| %>
-    <li><%= beer.name %></li>
-  <% end %>
-</ul>
+<h1>List of all beers</h1>
+
+<div id="beers">
+  <ul>
+    <% @beers.each do |beer| %>
+      <li><%= link_to beer.name, beer %></li>
+    <% end %>
+  </ul>
+  <p>
+      <%= link_to "Go to home page", "/" %>
+    </p>
+</div>
