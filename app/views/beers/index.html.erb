@@ -1,10 +1,12 @@
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-  Breakfast
+<h1>List of all beers</h1>
+
+<div id="beers">
+  <ul>
+    <% @beers.each do |beer| %>
+      <li><%= link_to beer.name, beer %></li>
+    <% end %>
+  </ul>
+  <p>
+      <%= link_to "Go to home page", "/" %>
+    </p>
 </div>
-
-
-<ul>
-  <% @beers.each do |beer| %>
-    <li><%= beer.name %></li>
-  <% end %>
-</ul>
