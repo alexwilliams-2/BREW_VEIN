@@ -1,2 +1,11 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Welcome to BREW-VEIN </h1>
+<h2> Fear no longer. Never settle for supermarket draught again!</h2>
+
+<h3> Beer, the cause of, and solution to, all of your problems.</h3>
+
+<%= link_to 'Enter our wonderful world of alcohol-enhanced medicine', "/beers" %>
+
+<h2> See some of our beers </h2>
+<li>
+  <%= @beers.first.name  %>
+</li>
