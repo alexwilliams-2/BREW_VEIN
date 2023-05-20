@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require 'faker'
+5.times do
+  Beer.new(title: Faker::Music.band, url: Faker::Sports::Football.player, votes: 2)
+end
