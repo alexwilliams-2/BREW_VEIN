@@ -1,5 +1,5 @@
 class BeersController < ApplicationController
-  before_action :set_user, only: %i[new create]
+  # before_action :set_user, only: %i[new create]
 
   def index
     @beers = Beer.all
@@ -15,10 +15,12 @@ class BeersController < ApplicationController
 
   def create
     @beer = Beer.new(beer_params)
-    @beer.user = @user
+    # @beer.user = @user
+    @beer.user = User.first
+
     @beer.save
     if @beer.save
-      redirect_to beer_path(@beer)
+      redirect_to beers_path(@beer)
     else
       render :new, status: :unprocessable_entity
     end
@@ -31,11 +33,11 @@ class BeersController < ApplicationController
 
   private
 
-  def set_user
-    @user = current_user
-  end
+  # def set_user
+  #   @user = current_user
+  # end
 
   def beer_params
-    params.require(:beer).permit(:name, :price, :description)
+    params.require(:beer).permit(:name, :price, :description, :user_id)
   end
 end
