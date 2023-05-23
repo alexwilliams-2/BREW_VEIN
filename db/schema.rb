@@ -24,7 +24,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_18_175238) do
     t.index ["user_id"], name: "index_beers_on_user_id"
   end
 
-
   create_table "orders", force: :cascade do |t|
     t.bigint "beer_id", null: false
     t.bigint "user_id", null: false
