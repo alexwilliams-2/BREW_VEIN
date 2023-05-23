@@ -6,7 +6,6 @@ class OrdersController < ApplicationController
     @orders = Order.where(user_id: @user)
     # @order = @orders.where(user_id: @user)
     # @beer = Beer.find(@order[0].beer_id)
-
   end
 
   def destroy
@@ -19,19 +18,32 @@ class OrdersController < ApplicationController
     @order = Order.new
   end
 
+  def show
+    @order = Order.find(params[:id])
+  end
+
   def create
     @order = Order.new
+    # needs to be updated to current_user
+    @order.user = User.find(1)
     @order.beer = @beer
-    @order.user = current_user
-    @order.beer = B
+    if @order.save
+      redirect_to order_path(@order)
+    end
   end
 
   private
 
+  # def order_params
+  #   params.require(:order).permit(:beers_id)
+  # end
+
   def set_beer
-    @beer = Beer.find(params[:id])
+    @beer = Beer.find(params[:order][:beer])
   end
+
   # def set_order
   #   @order = Order.find(params[:id])
   # end
+
 end

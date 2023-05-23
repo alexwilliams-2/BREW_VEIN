@@ -3,9 +3,4 @@
 <h4><%= @beer.price %></h4>
 <%= link_to 'Back to Index', beers_path %>
 
-<%= link_to 'Add to order', new_user_order_path(@beer), data: { turbo_method: :post } %>
-
-
-<%#= link_to 'Add to order', root_path %>
-
-<%# <%= render 'submit_beer', beer: @beer, order:@order %>
+<%= link_to 'Add to basket', new_order_path(beer: @beer) %>

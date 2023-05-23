@@ -7,10 +7,9 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
 
-  resources :users, only: %i[show] do
-    resources :orders, only: %i[index new create]
-  end
-  resources :orders, only: [:destroy]
+  resources :users, only: %i[show]
+
+  resources :orders
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :beers, only: %i[index show new create destroy]
