@@ -3,3 +3,5 @@
 <h4><%= @beer.price %></h4>
 <%= cl_image_tag @beer.photo.key, height: 300, width: 400, crop: :fill %>
 <%= link_to 'Back to Index', beers_path %>
+
+<%= link_to 'Add to basket', new_order_path(beer: @beer) %>
