@@ -1,4 +1,12 @@
-<h2><%= @beer.name %></h2>
-<h3><%= @beer.description %></h3>
-<h4><%= @beer.price %></h4>
-<%= link_to 'Back to Index', beers_path %>
+
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1535958636474-b021ee887b13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80)">
+  <h2><%= @beer.name %></h2>
+</div>
+
+
+<div class="container">
+  <p><%= @beer.description %></p>
+  <h2 class="card-trip-pricing">£<%= @beer.price %></h2>
+    <%= link_to 'Back to Index', beers_path, class: "btn btn-ghost"%>
+  <%= link_to 'Back to Index', beers_path, class: "btn btn-ghost"%>
+</div>
