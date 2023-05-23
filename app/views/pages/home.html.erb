@@ -1,14 +1,21 @@
-<div class="container" style="background-color: #f0f0f0; padding: 20px;">
-  <div class="card-product" style="border: 1px solid #ccc; padding: 10px;">
-    <img src="app/images/beer.png" style="width: 200px; height: auto;" />
-    <div class="card-product-infos">
-      <h1 style="font-size: 24px;"><strong>Welcome to BREW-VEIN</strong></h1>
-      <h2 style="font-size: 18px;">Fear no longer. Never settle for supermarket draught again!</h2>
-      <h3 style="font-size: 16px;">Beer, the cause of, and solution to, all of your problems.</h3>
-      <%= link_to 'Enter our wonderful world of alcohol-enhanced medicine', beers_path, style: 'text-decoration: none; color: #333;' %>
+<div class="card-trip">
+  <img src="https://images.pexels.com/photos/12360540/pexels-photo-12360540.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
+  <div class="card-trip-infos">
+    <div class="centered-card">
+      <h1>Welcome to BREW VEIN!</h1>
+      </div>
+  </div>
+</div>
 
-      <h2 style="font-size: 20px; margin-top: 10px;">See some of our beers</h2>
-      <li style="font-size: 16px;">
-        <%= @beers.first.name %>
-      </li>
-      <%= link_to "View all beers", beers_path, class: "btn btn-primary"%>
+<div>
+  <h2>Fear no longer. Never settle for supermarket draught again!</h2>
+</div>
+<%= link_to 'Enter our wonderful world of alcohol-enhanced medicine', "/beers" %></button>
+
+  <div class="cards">
+  <% 6.times do %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/2565587/pexels-photo-2565587.jpeg?auto=compress&cs=tinysrgb&w=1200)">
+      <%= @beers.first.name %>
+    </div>
+  <% end %>
+</div>
