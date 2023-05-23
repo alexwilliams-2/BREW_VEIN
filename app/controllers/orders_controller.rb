@@ -23,6 +23,7 @@ class OrdersController < ApplicationController
     @order = Order.new
     @order.beer = @beer
     @order.user = current_user
+    @order.beer = B
   end
 
   private
