@@ -2,16 +2,15 @@
   <img src="https://images.pexels.com/photos/12360540/pexels-photo-12360540.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
   <div class="card-trip-infos">
     <div class="centered-card">
-      <h1>Welcome to BREW VEIN!</h1>
+      <h1>WELCOME TO BREW VEIN!</h1>
+
       </div>
   </div>
 </div>
 
-<<<<<<< HEAD
-<div>
+<div class= "flex-container">
   <h2>Fear no longer. Never settle for supermarket draught again!</h2>
 </div>
-<%= link_to 'Enter our wonderful world of alcohol-enhanced medicine', "/beers" %></button>
 
   <div class="cards">
   <% 6.times do %>
@@ -20,11 +19,5 @@
     </div>
   <% end %>
 </div>
-=======
-      <h2 style="font-size: 20px; margin-top: 10px;">See some of our beers</h2>
-      <li style="font-size: 16px;">
-        <%= @beers.first.name %>
-      </li>
       <%= link_to "View all beers", beers_path, class: "btn btn-primary"%>
       <%= link_to "Add a beer",  'beers/new', class: "btn btn-primary"%>
->>>>>>> master

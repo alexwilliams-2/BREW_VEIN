@@ -2,6 +2,7 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  position: relative;
 }
 
 .card-trip > img {
@@ -22,15 +23,6 @@
   margin: 0;
 }
 
-
-.card-trip .card-trip-infos {
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
-}
-
 .card-trip-infos .card-trip-user {
   position: absolute;
   right: 16px;
@@ -40,14 +32,44 @@
 
 .centered-card {
   display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding: 15px;
+}
+
+// .flex-container {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   height: 100vh;
+// }
+
+.cards {
+  // display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
-.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+.card-category {
+  width: 200px;
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+
 }
+
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
