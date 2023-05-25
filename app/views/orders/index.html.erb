@@ -1,10 +1,8 @@
-<h1>Basket</h1>
-<p>Find me in app/views/orders/index.html.erb</p>
+<div class="container">
+  <h1> 🛒 Cart</h1>
+  <p> Your orders ↓ </p>
+  <% @orders.each do |order| %>
+    <%= order.beers.name %>
+  <% end %>
 
-<div>
-  <ul>
-    <% @orders.each do |order| %>
-      <li> <%= order.beer.name %> </li>
-    <% end %>
-  </ul>
 </div>

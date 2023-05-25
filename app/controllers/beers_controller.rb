@@ -6,6 +6,7 @@ class BeersController < ApplicationController
   end
 
   def show
+    @order = Order.new
     @beer = Beer.find(params[:id])
   end
 
@@ -15,7 +16,6 @@ class BeersController < ApplicationController
 
   def create
     @beer = Beer.new(beer_params)
-    # @beer.user = @user
     @beer.user = User.first
 
     @beer.save
@@ -25,6 +25,7 @@ class BeersController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
 
   def destroy
     beer = Beer.find(params[:id])
@@ -38,6 +39,6 @@ class BeersController < ApplicationController
   # end
 
   def beer_params
-    params.require(:beer).permit(:name, :price, :description, :user_id)
+    params.require(:beer).permit(:name, :price, :description, :user_id, :photo)
   end
 end

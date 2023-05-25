@@ -7,6 +7,7 @@
   </div>
 </div>
 
+<<<<<<< HEAD
 <div>
   <h2>Fear no longer. Never settle for supermarket draught again!</h2>
 </div>
@@ -19,3 +20,11 @@
     </div>
   <% end %>
 </div>
+=======
+      <h2 style="font-size: 20px; margin-top: 10px;">See some of our beers</h2>
+      <li style="font-size: 16px;">
+        <%= @beers.first.name %>
+      </li>
+      <%= link_to "View all beers", beers_path, class: "btn btn-primary"%>
+      <%= link_to "Add a beer",  'beers/new', class: "btn btn-primary"%>
+>>>>>>> master
