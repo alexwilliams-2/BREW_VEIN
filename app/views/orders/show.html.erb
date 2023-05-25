@@ -1,4 +1,14 @@
-<h1>Orders#show</h1>
-<p>Find me in app/views/orders/show.html.erb</p>
+<div class="container">
+  <h1>Your basket</h1>
 
-<%= @order.beer.name %>
+  <p>Awesome! Beer is on the way</p>
+
+  <p> You have ordered: </p>
+    <li> 1x <%= @order.beer.name %> </li>
+
+  <%= link_to 'See all your orders', orders_path %>
+
+
+<%= console %>
+
+</div>

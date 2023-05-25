@@ -10,8 +10,8 @@ class OrdersController < ApplicationController
 
   def destroy
     @order = Order.find(params[:id])
-    @order.destroy!
-    # redirect so tmewhere
+    @order.delete
+    redirect_to orders_path, status: :see_other
   end
 
   def new
@@ -25,7 +25,7 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new
     # needs to be updated to current_user
-    @order.user = User.find(1)
+    @order.user = User.find(3)
     @order.beer = @beer
     if @order.save
       redirect_to order_path(@order)
