@@ -1,12 +1,19 @@
-<h1>List of all beers</h1>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1535958636474-b021ee887b13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80)">
+  <%= link_to "BREW VEIN", "/", class: "btn btn-flat" %>
+</div>
 
-<div id="beers">
-  <ul>
+<div class="container mt-3">
+<div class="row justify-content-md-center">
     <% @beers.each do |beer| %>
-      <li><%= link_to beer.name, beer %></li>
+    <div class="col col-sm-4 p-3">
+    <div class="card-product">
+       <%= cl_image_tag beer.photo.key, height: 300%>
+      <div class="container card-product-infos">
+         <%= link_to beer.name, beer %>
+        <p><%= beer.description %> <strong>£<%= beer.price %></strong> only.</p>
+      </div>
+      </div>
+    </div>
     <% end %>
-  </ul>
-  <p>
-      <%= link_to "Go to home page", "/" %>
-    </p>
+  </div>
 </div>
