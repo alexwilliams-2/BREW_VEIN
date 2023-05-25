@@ -17,7 +17,7 @@
         <h5 class="card-trip-pricing">£<%= @beer.price %></h5>
       </div>
       <div class="card-body row align-items-center">
-        <%= link_to 'Add to bag', beers_path, class: "btn btn-ghost"%>
+        <%= link_to 'Add to bag', new_order_path(beer: @beer), class: "btn btn-ghost"%>
       </div>
     </div>
     </div>
@@ -50,3 +50,4 @@
     </table>
     </div>
   </div>
+
