@@ -1,8 +1,16 @@
 <div class="container">
+
   <h1> 🛒 Cart</h1>
   <p> Your orders ↓ </p>
+  <ul>
   <% @orders.each do |order| %>
-    <%= order.beers.name %>
-  <% end %>
+    <li> 1x <%= order.beer.name %>
+      <%= link_to "Delete item?",
+      order_path(order),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+    </li>
+    <% end %>
+  </ul>
+</li>
 
 </div>
