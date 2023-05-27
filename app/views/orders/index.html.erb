@@ -5,8 +5,8 @@
   <ul>
   <% @orders.each do |order| %>
     <li> 1x <%= order.beer.name %>
-      <%= link_to "Delete item?",
-      order_path(order),
+      <%= link_to "❌",
+      order_path(order), style: 'text-decoration: none; font-size: 20px',
       data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
     </li>
     <% end %>
