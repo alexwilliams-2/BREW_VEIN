@@ -16,7 +16,7 @@ class BeersController < ApplicationController
 
   def create
     @beer = Beer.new(beer_params)
-    @beer.user = User.first
+    @beer.user = current_user
 
     @beer.save
     if @beer.save
