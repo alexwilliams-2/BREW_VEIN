@@ -3,4 +3,32 @@
   <%= f.submit %>
 <% end %>
 
-<%= console %>
+<div class="container">
+  <h2>Your Beer Order</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        <div class="beer-info">
+          <%= cl_image_tag @beer.photo.key, height: 300 %>
+          <div class="beer-details">
+            <h4><%= @order.beer.name %></h4>
+          </div>
+        </div>
+      </td>
+      <td><%= @order.beer.description %></td>
+          <td>£<%= @order.beer.price %></td>
+          <td><%= @order.beer.name %></td>
+          <td>£<%= @order.beer.price %></td>
+        </tr>
+    <tbody>
+
+  </table>
+</div>
