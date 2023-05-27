@@ -1,16 +1,22 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1571613316887-6f8d5cbf7ef7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1771&q=80);">
+  <h2> Thank you for ordering with Brew-Vein </h2>
+</div>
 <div class="container">
-
-  <h1> 🛒 Cart</h1>
-  <p> Your orders ↓ </p>
-  <ul>
-  <% @orders.each do |order| %>
-    <li> 1x <%= order.beer.name %>
-      <%= link_to "Delete item?",
-      order_path(order),
-      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
-    </li>
-    <% end %>
-  </ul>
-</li>
-
+<%# style this card %>
+  <div class="card row justify-content-md-center">
+    <h1> 🛒 Cart</h1>
+  </div>
+  <%# style this card %>
+  <div class="card row justify-content-md-center">
+    <p> Your orders ↓ </p>
+    <ul>
+    <% @orders.each do |order| %>
+      <li> 1x <%= order.beer.name %>
+        <%= link_to "Delete item?",
+        order_path(order),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+      </li>
+      <% end %>
+    </ul>
+  </div>
 </div>
