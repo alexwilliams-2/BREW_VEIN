@@ -19,8 +19,8 @@
              <div class="container card-product-infos">
                 <h5> 1x <%= order.beer.name %> </h5>
               </div>
-              <%= link_to "Delete item?",
-              order_path(order),
+              <%= link_to "❌",
+              order_path(order), style: 'text-decoration: none; font-size: 20px',
               data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
           </div>
         </div>
