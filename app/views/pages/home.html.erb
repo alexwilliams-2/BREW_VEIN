@@ -1,24 +1,36 @@
-<div class="container" style="background-color: #f0f0f0; padding: 20px;">
-  <div class="card-product" style="border: 1px solid #ccc; padding: 10px;">
-    <img src="app/images/beer.png" style="width: 200px; height: auto;" />
-    <div class="card-product-infos">
-      <h1 style="font-size: 24px;"><strong>Welcome to BREW-VEIN</strong></h1>
-      <h2 style="font-size: 18px;">Fear no longer. Never settle for supermarket draught again!</h2>
-      <h3 style="font-size: 16px;">Beer, the cause of, and solution to, all of your problems.</h3>
-      <%= link_to 'Enter our wonderful world of alcohol-enhanced medicine', beers_path, style: 'text-decoration: none; color: #333;' %>
-
-      <h2 style="font-size: 20px; margin-top: 10px;">See some of our beers</h2>
-      <li style="font-size: 16px;">
-        <%= @beers.first.name %>
-      </li>
-      <%= link_to "View all beers", beers_path, class: "btn btn-primary"%>
-      <%= link_to "Add a beer",  'beers/new', class: "btn btn-primary"%>
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1571613316887-6f8d5cbf7ef7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1771&q=80);">
   <div class="container">
-    <h1>Welcome to <strong>BREW VEIN</strong>!</h1>
+    <h1>Welcome to <strong> BREW-VEIN</strong> !</h1>
     <p>Fear no longer. Never settle for supermarket draught again!</p>
-    <p>Beer, the cause of, and solution to, all of your problems.</p>
-    <a class="btn btn-flat" href="#">Apply now</a>
+     <%= link_to 'Browse all beers', beers_path, style: 'text-decoration: none; color: #333;', class: "btn btn-ghost"%>
   </div>
+</div>
+<div class="container mt-3">
+<p>  </p>
+</div>
+
+<section id="about" class="section">
+  <div class="container">
+    <div class="row justify-content-md-center p-3">
+      <div class="col-md-6">
+        <h2>Beer, the cause of, and solution to, all of your problems.</h2>
+        <p>Welcome to Brew Vein, your go-to beer delivery service. We are passionate about providing you with the finest craft beers from around the world.</p>
+        <p>Our mission is to connect beer lovers with unique and high-quality brews that are handpicked by our expert team. We collaborate with renowned breweries to ensure that you have access to an exceptional selection of flavors and styles.</p>
+        <p>At Brew Vein, we believe that beer is not just a beverage; it's an experience. We strive to create an online platform that celebrates the artistry and craftsmanship behind every brew. We value the stories, traditions, and innovation that make each beer special.</p>
+      </div>
+      <div class="col-md-6" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1532634922-8fe0b757fb13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1772&q=80); background-size: cover;  ">
+      </div>
+    </div>
+  </div>
+</section>
+<div class="container mt-3">
+  <div class="row justify-content-md-center p-3">
+      <div class="cards">
+      <% @beers.sort_by{|t| - t.created_at.to_i}.last(15).each do |beer| %>
+         <div class="card-category p-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= rails_blob_url(beer.photo) %>">
+          <%= link_to beer.name, beer, style: 'text-decoration: none; color:#FFFFFF' %>
+        </div>
+     <% end %>
+     </div>
 </div>
