@@ -16,6 +16,7 @@ class OrdersController < ApplicationController
 
   def new
     @order = Order.new
+    @beer = Beer.find(params[:beer])
   end
 
   def show
@@ -45,5 +46,4 @@ class OrdersController < ApplicationController
   # def set_order
   #   @order = Order.find(params[:id])
   # end
-
 end

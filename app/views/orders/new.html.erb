@@ -1,5 +1,33 @@
-<%= simple_form_for [@order] do |f| %>
-  <%= f.hidden_field :beer, value: params[:beer] %>
-  <%= f.submit %>
-<% end %>
 
+<div class="container">
+  <h2>Your Beer Order</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        <div class="beer-info">
+          <%= cl_image_tag @beer.photo.key, height: 200 %>
+        </div>
+      </td>
+      <td><%= @beer.description %></td>
+          <td><%= @beer.name%></td>
+          <td>£<%= @beer.price %></td>
+        </tr>
+    <tbody>
+  </table>
+</div>
+
+<div class="container">
+  <%= simple_form_for [@order] do |f| %>
+    <%= f.hidden_field :beer, value: params[:beer] %>
+    <%= f.submit "Confirm the order", class: "btn btn-ghost" %>
+  <% end %>
+</div>
