@@ -1,21 +1,21 @@
-<div class="card-trip">
+<div class="beer-trip">
   <img src="https://images.pexels.com/photos/12360540/pexels-photo-12360540.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
-  <div class="card-trip-infos">
-    <div class="centered-card">
+  <div class="card-beer-infos">
+    <div class="title-beer">
       <h1>WELCOME TO BREW VEIN!</h1>
 
       </div>
   </div>
 </div>
 
-<div class= "flex-container">
+<div class= "second-title">
   <h2>Fear no longer. Never settle for supermarket draught again!</h2>
 </div>
 
-  <div class="cards">
+  <div class="beer-cards">
   <% 6.times do %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/2565587/pexels-photo-2565587.jpeg?auto=compress&cs=tinysrgb&w=1200)">
-      <%= @beers.sample.name %>
+    <div class="beer-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/2565587/pexels-photo-2565587.jpeg?auto=compress&cs=tinysrgb&w=1200)">
+      <h3 class="text-center"><% @beers.sample.name %></h3>
     </div>
   <% end %>
 </div>
